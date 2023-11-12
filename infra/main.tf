@@ -4,13 +4,13 @@ provider "azurerm" {
 
 #Create a resource group 
 resource "azurerm_resource_group" "resource_group" {
-    name = "rg-terraform-demo"
+    name = "rg-terraform-demo1"
     location = "eastus"
 }
 
 #Create a storage account
 resource "azurerm_storage_account"  "storage_account" {
-    name = "terraformazuretoronto6"
+    name = "terraformaohanzocodes6"
     resource_group_name = azurerm_resource_group.resource_group.name
     location = azurerm_resource_group.resource_group.location
     account_tier = "Standard"
@@ -28,6 +28,6 @@ resource "azurerm_storage_blob" "blob" {
   storage_account_name   = azurerm_storage_account.storage_account.name
   storage_container_name = "$web"
   type                   = "Block"
-  content_type                 = "text/html"
+  content_type           = "text/html"
   source_content         = "<h1>Hi, this is hanzo bananzo</h1>"
 }
